@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  backend:
+    image: brayaon/go-app
+    ports:
+      - "4001:4001"
+  frontend:
+    image: brayaon/vue-app
+    ports:
+      - "5000:80"
+    environment: 
+      - VUE_APP_API_ENDPOINT=http://backend:4001/api
